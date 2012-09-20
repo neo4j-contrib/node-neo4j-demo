@@ -1,19 +1,453 @@
-h1= title
+!!! transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    title Neo4j Live
+    // Favicons ================================================== 
+    link(rel='shortcut icon', href='images/favicon.png')
+    link(rel='apple-touch-icon', href='images/apple-touch-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='images/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='images/apple-touch-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='images/apple-touch-icon-144x144.png')
+    link(rel='stylesheet', href='css/styles.css', type='text/css')
+    link(rel='stylesheet', href='css/neo.css', type='text/css')
+    //if IE 9  link(rel='stylesheet', href='css/styles_ie9.css', type='text/css')
+    //if IE 8 link(rel='stylesheet', href='css/styles_ie8.css', type='text/css')
+    //if IE 7 link(rel='stylesheet', href='css/styles_ie7.css', type='text/css')
+    // fonts (other than included webfonts in css/fonts) 
+    link(href='http://fonts.googleapis.com/css?family=Lato:900,300,400', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='css/jquery.lightbox-0.5.css', type='text/css')
+    script(type='text/javascript', src='js/jquery-1.4.3.min.js')
+    script(type='text/javascript', src='js/jquery.lightbox-0.5.pack.js')
+    script(type='text/javascript', src='js/jquery.easing.1.3.js')
+    script(type='text/javascript', src='js/dtbaker_slider_links.js')
+    script(type='text/javascript', src='js/dtbaker_slider.js')
+    script(type='text/javascript', src='js/dtbaker_animation.js')
+    script(type='text/javascript')
+      document.write(unescape('%3Cstyle type="text/css"%3E.spacer_animation .spacer_animation_parts div{ margin-top:400px; }%3C/style%3E'));
+      document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_left{ margin-left:0px; }%3C/style%3E'));
+      document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_right{ margin-left:475px;margin-top:-438px; }%3C/style%3E'));
+      $(function() {
+      $('.spacer_animation').each(function(){
+      var foo = new anim_scroller();
+      foo.init_popup(this);
+      anim_scrollers.push(foo);
+      });
+      // popout leaf code.
+      $('.main_box_background').each(function(){
+      var foo = new anim_scroller();
+      foo.init_popout(this,[
+      {class:'.main_box_bg_left',image:'images/neo/leaves_left.png',animation_from:{marginLeft:0},animation_to:{marginLeft: -121},time:600},
+      {class:'.main_box_bg_right',image:'images/neo/leaves_right.png',animation_from:{marginLeft:475, marginTop:-438},animation_to:{marginLeft: 595,marginTop: -331},time:600}
+      ]
+      );
+      anim_scrollers.push(foo);
+      });
+      window.onscroll=dtbaker_anim_scroll_go;
+      dtbaker_anim_scroll_go();
+      $('.lightbox').lightBox();
+      $('.dtbaker_gallery a').lightBox();
+      // this starts the "portfolio" sideways scroller.
+      // create a new one of these for each sideways scroller you would like to have.
+      new dtbaker_scroller('rules_slider');
+      });
+  body
+    #fixed_header
+      #header
+        #logo
+          a.slide_link(href='#home_page') Neo4j Live
+        #menu
+          ul#navigation
+            li
+              a.slide_link(href='#getting_started') Get Started
+            li
+              a.slide_link(href='#bootstrap') Bootstrap
+            li
+              a.slide_link(href='#live') Live Neo4j
+            li
+              a.slide_link(href='#discuss') Discuss
+        #dates Live on Heroku with Node.js
+    // end header
+    #home_page
+    #bg_top
+      #wrapper
+        #home_pag.main_box_wrapper(style='padding-top: 0;')
+          .main_box_background
+            // start box background 
+            .main_box_bg_left
+            // home box
+            #section1.main_box
+              .home_box
+                .text
+                  h1
+                    em Neo4j:
+                    | the Graph Database
+                  h2 You know relational, now consider relationships
+                  h2 Start to notice that graphs are everywhere
+                  h2 Then use Neo4j to make sense of your data
+                  p
+                    | Your path towards Graph Enlightenment starts here:
+                  ul.numbered_list
+                    li
+                      span 1
+                      a.slide_link(href='#getting_started') Get Started 
+                      | by learning a bit about Neo4j
+                    li
+                      span 2
+                      a.slide_link(href='#bootstrap') Bootstrap 
+                      | your application with this template
+                    li
+                      span 3
+                      | Take it for a spin on&nbsp;
+                      a.slide_link(href='#live') Live Data
+                  ul.buttons_float
+                    li
+                      .button_med
+                        a.slide_link(href='#getting_started') learn Neo4j
+                    li
+                      .button_med
+                        a.slide_link(href='#bootstrap') create App
+                  // end left
+                .home_right
+                  // div class="star">new</div 
+                  img(src='images/neo/home_image.png', width='433', height='391', alt='product')
+                // end home right
+            // end home box
+            .main_box_bg_right
+          // end main box background 
+        // start under animation
+        #spacer_animation_rain.spacer_animation
+          .spacer_animation_bg
+          .spacer_animation_parts
+            .spacer_animation_part1
+            .spacer_animation_part2
+            .spacer_animation_part3
+        // end under animation
+        
+        // Getting Started box
+        #getting_started.main_box_wrapper
+          .main_box_background
+            // start box background 
+            .main_box_bg_left
+            // change this to be unique, then you can link to it from the main menu
+            .main_box
+              // sets the width, minimum height and top margin 
+              .content
+                // start the inner slider left/right bit 
+                #rules_slider.slider_container
+                  .slider_header
+                    h1 Getting Started
+                    ul.slider_buttons
+                      li
+                        a.portfolio_prev.slider_prev(href='#') «
+                      li
+                        a.portfolio_next.slider_next(href='#') »
+                  .slider_wrapper
+                    .slider_mover
+                      div
+                        .feature
+                          .content_left
+                            h2 Learn about Neo4j
+                            p
+                              | Neo4j is a graph database. Records are called 
+                              em nodes 
+                              | and the connections between records are first-class citizens called 
+                              em relationships.
+                            p
+                              | Neo4j refers to all of this as a 
+                              em Property Graph 
+                              | — nodes and relationships with key-value 
+                              em properties on both.
+                            p
+                              | Querying is performed through a traversal, using the delightful 
+                              a.slide_link(href='#live') Cypher 
+                              | query language. 
+                              | It's like a friendly, pattern-matching version of SQL.
+                            h3.title14
+                              a.slider_next(href='#') You Know Relational &raquo; 
+                          // end content left
+                          .side_right
+                            // side menu
+                            .side_menu
+                              h3 Neo4j Community
+                              ul
+                                li
+                                  a(href='http://neo4j.org') neo4j.org
+                                li
+                                  a(href='http://neo4j.meetup.com') Neo4j Meetups
+                                li
+                                  a(href='http://stackoverflow.com/questions/tagged/neo4j') Stack Overflow
+                                li
+                                  a(href='http://groups.google.com/group/neo4j') Google Group
+                            .side_menu
+                              h3 Learning Neo4j
+                              ul
+                                li
+                                  a(href='http://neo4j.org') neo4j.org
+                                li
+                                  a(href='http://docs.neo4j.org') Neo4j Manual
+                                li
+                                  a(href='http://watch.neo4j.org') Screencasts
+                            // end side menu
 
-p
-    | This is a template app showing the use of&nbsp;
-    a(href='http://www.neo4j.org/', target='_blank') Neo4j
-    |  from Node.js. It uses the&nbsp;
-    a(href='https://github.com/thingdom/node-neo4j', target='_blank') node-neo4j
-    |  library, available on npm as&nbsp;
-    code neo4j
-    .
+                      div
+                        .feature
+                          .left_460
+                            h2 Ye Olde Join Table
+                            h3.title18 This you already know
+                            p
+                              | That the "relational" in RDBMS is simply a foreign key, a fairly humble reference to another record.
+                              | Typically the column will be the same as the primary key in the other table, and the constraint will
+                              | say something about the connection. To provide more information, use a...
+                            h3.title14 Join table
+                            p
+                              | Buried in the schema of every relational database on the planet, one or more join tables lurk. While the
+                              | convention adds valuable information about how records relate, queries across multiple joins on large data
+                              | sets can cause join pain.
+                            h3.title14 
+                              a.slider_next(href='#') Now, consider graph relationships &raquo;
+                          .right_400
+                            img(src='images/join_table.png', width='400', height='364', alt='Join Table')
+                      div
+                        .feature
+                          .left_460
+                            h2 Graph Relationships
+                            h3.title18 Relationships as first-class citizens
+                            p
+                              | In a graph database like Neo4j, relationships are essential data elements. Down to the bare metal, Neo4j
+                              | is optimized for managing the relationships between records, resulting in queries that are 1000x faster.
+                            h3.title14 How can it be that much faster?
+                            p
+                              | In a graph traversal, only the local data affects the query speed, and because relationships are
+                              | materialized as actual structures, finding local data is extremely fast. And, it isn't affected by
+                              | the growth of the entire data set. What happens to your RDBMS join queries when the data set grows?
+                          .right_400
+                            img(src='images/relationships.png', width='400', height='279', alt='Graph Relationships')
+                      // keep adding more divs here if you want more slides 
+                  // end the inner slider left/right bit 
+                  .clear
+                  // forces the design to grow down as you add more content 
+                // closes content 
+            // closes main box 
+            .main_box_bg_right
+          // end main box background 
+        // end rules box
+        // start under animation
+        #spacer_animation_rainbow.spacer_animation
+          .spacer_animation_bg
+          .spacer_animation_parts
+            .spacer_animation_part1
+            .spacer_animation_part2
+            .spacer_animation_part3
+        // end under animation
+        // bootstrap box
+        #bootstrap.main_box_wrapper
+          .main_box_background
+            // start box background 
+            .main_box_bg_left
+            .main_box
+              .content
+                h1 Bootstrap Your App
+                .left_460
+                  p
+                    | Thanks to outstanding Neo4j community member 
+                    a(href='https://github.com/aseemk') Aseem Kishore 
+                    | there is a nice 
+                    a(href='https://github.com/thingdom/node-neo4j') Node.js driver 
+                    | for Neo4j. As a bonus, Aseem also created a 
+                    a(href='https://github.com/aseemk/node-neo4j-template') template project 
+                    | which we've used as the basis for this project. 
+                  p
+                    | You'll need a few things to get started:
+                  p
+                  ul.ticklist
+                    li Download the latest 
+                      a(href="http://neo4j.org/download") Neo4j
+                    li Install the current version of 
+                      a(href="http://nodejs.org") Node.js
+                    li Optionally, create an account on 
+                      a(href='http://heroku.com') Heroku
+                // end left
+                .right_400
+                  img(src='images/neo/book_cloud.png', width='324', height='347', alt='book')
+                .clear
+                .two_column_wrapper
+                  .half_column_left
+                    h2.box_title Clone this Project
+                    ol.getting_started
+                      pre.
+                        # Start Neo4j
+                        cd ${NEO4K_INSTALL_DIR}
+                        ./bin/neo4j start
 
-p.
-    This app is a simple social network manager: it lets you add and remove
-    users and "follows" relationships between them.
+                        # Install the required dependencies
+                        npm install
 
-p
-    strong
-        | Get started:&nbsp;
-        a(href='/users') View all users
+
+                        | Go to
+                        a(href='http://gensen.herokuapp.com') Gensen
+                        | , logging in to your Heroku account
+                    p
+                      | Congratulations! A fresh clone of the template project will be created for you, ready to use and easily customized for your own clever purposes.
+                  .half_column_right
+                    h2.box_title share a project 
+                    ol
+                      li
+                        | Go to
+                        a(href='http://gensen.herokuapp.com') Gensen
+                        | , logging in to your Heroku account
+                      li Follow the "Share your Applications" button
+                      li Select one of your existing Heroku apps, hit "Share"
+                      li Customize the "Share an App" form, then submit
+                    p
+                      | Thanks! You will have very generously contributed to saving the planet by reducing the amount of energy wasted when starting a project from scratch.
+                  .clear
+                // end two_column_wrapper
+            .main_box_bg_right
+            // end main box background 
+        // end gensen box
+        // start under animation
+        #spacer_animation_wind.spacer_animation
+          .spacer_animation_bg
+          .spacer_animation_parts
+            .spacer_animation_part1
+            .spacer_animation_part2
+            .spacer_animation_part3
+            .spacer_animation_part4
+        // end under animation
+        // getting started box 
+        #live.main_box_wrapper
+          .main_box_background
+            // start box background 
+            .main_box_bg_left
+            .main_box
+              .content
+                h1 Querying Live Data
+                .content_left
+                  h3.title18 Live on Neo4j
+                  p
+                    | The Wednesday track of NoSQL Now has been captured in a Neo4j Graph, deployed on Heroku.
+                    | Neo4j's Webadmin is an easy way to get familiar with data and experiment with queries.
+                  p
+                    | Check it out
+                    a(href='/webadmin/') live right now
+                    | :*
+                  ul
+                    li
+                      a(href='/webadmin/') Dashboard
+                      | : an overview of the database, with vital stats and a chart showing change over time
+                    li
+                      a(href='/webadmin/#/data/search/1/') Data browser
+                      | : data inspector and visualizer (use the righmost button in the toolbar to toggle)
+                    li
+                      a(href='/webadmin/#/console/') Console
+                      | : a REPL for running Cypher queries, or testing out REST API calls
+                  p.footnote
+                    | *
+                    strong Note
+                    | that you may get a phishing warning because we've encoded the password in these URLs.
+                // end content left
+                .side_right.side_box
+                  // side menu
+                  .side_menu
+                    h3 About Cypher
+                    p Cypher is a declarative language for graphs queries. Learn more:
+                    ul
+                      li
+                        a(href='http://docs.neo4j.org/chunked/stable/cypher-query-lang.html') Language Details
+                      li
+                        a(href='http://docs.neo4j.org/chunked/stable/cypher-cookbook.html') Cookbook Examples
+                      li
+                        a(href='http://docs.neo4j.org/chunked/stable/rest-api-cypher.html') Query over REST
+                      li
+                        a(href='http://systay.github.com/blog/2011/11/06/cypher---a-view-from-a-recovering-sql-dba/') for SQL DBAs
+                  // end side menu
+                .clear
+                div
+                  h3.title18 Try these Cypher queries on the live data
+                  ol
+                    li
+                      | All talks:
+                      pre.
+                        \nstart n=node(0) match n--m--talks return count(talks);                        
+                    li
+                      | Graph database track:
+                      pre.
+                        \nstart t=node:tags(tag="Graph Databases") match t                        
+                    li
+                      | People from Neo Technology:
+                      pre.
+                        \nstart c=node:companies(company="Neo Technology") match c                        
+                  p  
+            .main_box_bg_right
+          // end main box background 
+        // start under animation
+        #spacer_animation_bird.spacer_animation
+          .spacer_animation_bg
+          .spacer_animation_parts
+            .spacer_animation_part1
+            .spacer_animation_part2
+            .spacer_animation_part3
+        // end under animation
+        .spacer_graphic6
+        // Discuss box
+        #discuss.main_box_wrapper
+          .main_box_background
+            // start box background 
+            .main_box_bg_left
+            .main_box
+              .content
+                h1 Discuss
+                .content_left
+                  #disqus_thread
+                  script(type='text/javascript')
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'neo4j-cloudstock'; // required: replace example with your forum shortname
+                    //var disqus_developer = 1;
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                  noscript
+                    | Please enable JavaScript to view the
+                    a(href='http://disqus.com/?ref_noscript') comments powered by Disqus.
+                  a.dsq-brlink(href='http://disqus.com')
+                    | blog comments powered by
+                    span.logo-disqus Disqus
+                // end left half
+                .side_right
+                  h3 Learn more about Neo4j out on the intertubes:
+                  ul#connect
+                    li
+                      a(href='http://neo4j.org')
+                        img(src='images/icon_neo4j.gif', alt='Twitter', width='32', height='32', border='0')
+                    li
+                      a(href='http://twitter.com/#!/neo4j')
+                        img(src='images/icon_twitter.gif', alt='Twitter', width='32', height='32', border='0')
+                    li
+                      a(href='http://video.neo4j.org')
+                        img(src='images/icon_youtube.gif', alt='You Tube', width='32', height='32', border='0')
+                    li
+                      a(href='http://neo4j.meetup.com')
+                        img(src='images/icon_meetup.gif', alt='Linked In', width='32', height='32', border='0')
+                  h3 Contact us directly:
+                  p
+                    a(href='mailto:info@neo4j.org') info@neo4j.org
+                .clear
+              // end right half
+            .main_box_bg_right
+          // end main box background 
+        // end Discuss box
+      // end wrapper
+    // bg top
+    script(type='text/javascript')
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1192232-24']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
