@@ -9,7 +9,7 @@ var express = require('express')
 ;
 
 
-var regex = /http\:\/\/([^:\/]*):(\d+)/;
+var regex = /http\:\/\/(.+):(\d+)$/;
 var neo4jMatch = (process.env.NEO4J_URL || 'http://localhost:7474').match(regex);
 
 var app = module.exports = express.createServer();
