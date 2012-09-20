@@ -274,35 +274,38 @@ head
                 .two_column_wrapper
                   .half_column_left
                     h2.box_title Clone this Project
-                    ol.getting_started
-                      pre.
-                        # Start Neo4j
-                        cd ${NEO4K_INSTALL_DIR}
-                        ./bin/neo4j start
+                    pre.
+                      # Start Neo4j
+                      cd ${NEO4J_INSTALL_DIR}
+                      ./bin/neo4j start
 
-                        # Install the required dependencies
-                        npm install
+                      # clone this project
+                      git clone 
+                      https://github.com/neo4j-contrib/node-neo4j-demo.git
 
-
-                        | Go to
-                        a(href='http://gensen.herokuapp.com') Gensen
-                        | , logging in to your Heroku account
+                      # Make it go...
+                      cd node-neo4j-demo
+                      npm install
+                      npm start
                     p
                       | Congratulations! A fresh clone of the template project will be created for you, ready to use and easily customized for your own clever purposes.
                   .half_column_right
-                    h2.box_title share a project 
-                    ol
-                      li
-                        | Go to
-                        a(href='http://gensen.herokuapp.com') Gensen
-                        | , logging in to your Heroku account
-                      li Follow the "Share your Applications" button
-                      li Select one of your existing Heroku apps, hit "Share"
-                      li Customize the "Share an App" form, then submit
+                    h2.box_title Deploy on Heroku
+                    pre.
+                      # create an application (remember the assigned name)
+                      heroku apps:create
+
+                      # add neo4j add-on
+                      heroku addons:add neo4j
+
+                      git push heroku master
+                      heroku open
                     p
-                      | Thanks! You will have very generously contributed to saving the planet by reducing the amount of energy wasted when starting a project from scratch.
+                      | Simple, right? Now you've got a Neo4j+Node.js application deployed in the cloud.
                   .clear
-                // end two_column_wrapper
+                  // end two_column_wrapper
+                h3.title14 Now you're ready to try out the 
+                  a.slide_link(href='#live') running application
             .main_box_bg_right
             // end main box background 
         // end gensen box
