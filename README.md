@@ -55,3 +55,13 @@ The UI is admittedly quite crappy, but hopefully it shows the functionality.
 
 [coffeescript]: http://www.coffeescript.org/
 [streamline]: https://github.com/Sage/streamlinejs
+
+
+## Modified for your pleasure
+
+```bash
+git clone https://github.com/aseemk/node-neo4j-template
+```
+
+Mix in [http-proxy](https://github.com/nodejitsu/node-http-proxy)
+

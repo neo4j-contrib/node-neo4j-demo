@@ -4,9 +4,25 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes'),
+  httpProxy = require ('http-proxy')
+;
+
+
+var regex = /http\:\/\/([^:\/]*):(\d+)/;
+var neo4jMatch = (process.env.NEO4J_URL || 'http://localhost:7474').match(regex);
+
+console.log(neo4jMatch);
+
 
 var app = module.exports = express.createServer();
+var proxy = new httpProxy.HttpProxy({ 
+  target: {
+    host: neo4jMatch[1], 
+    port: neo4jMatch[2] || 7474,
+    https: false
+  }
+});
 
 // Configuration
 
@@ -44,6 +60,17 @@ app.del('/users/:id', routes.users.del);
 
 app.post('/users/:id/follow', routes.users.follow);
 app.post('/users/:id/unfollow', routes.users.unfollow);
+
+// proxy Neo4j's web interface
+app.all('/webadmin/*', function(req, res) {
+  proxy.proxyRequest(req, res);
+});
+app.all('/js/*', function(req, res) {
+  proxy.proxyRequest(req, res);
+});
+app.all('/css/*', function(req, res) {
+  proxy.proxyRequest(req, res);
+});
 
 app.listen(process.env.PORT || 3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
