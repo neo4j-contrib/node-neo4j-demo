@@ -12,9 +12,6 @@ var express = require('express')
 var regex = /http\:\/\/(.+):(\d+)$/;
 var neo4jMatch = (process.env.NEO4J_URL || 'http://localhost:7474').match(regex);
 
-console.log("NEO4J_URL:" + process.env.NEO4J_URL);
-console.log("http://100882a31:f82b5217f@81b235b52.hosted.neo4j.org:7139".match(regex));
-
 var app = module.exports = express.createServer();
 var proxy = new httpProxy.HttpProxy({ 
   target: {
