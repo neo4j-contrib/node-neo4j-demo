@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Neo4j Live</title>
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+    
+    
+    
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/neo.css" type="text/css" />
+    <!--[if IE 9]> <link rel="stylesheet" href="css/styles_ie9.css" type="text/css" /> <![endif]-->
+    <!--[if IE 8]> <link rel="stylesheet" href="css/styles_ie8.css" type="text/css" /> <![endif]-->
+    <!--[if IE 7]> <link rel="stylesheet" href="css/styles_ie7.css" type="text/css" /> <![endif]-->
+    
+    <!-- fonts (other than included webfonts in css/fonts) -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:900,300,400' rel='stylesheet' type='text/css'>
+	
+    <link rel="stylesheet" href="css/jquery.lightbox-0.5.css" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/dtbaker_slider_links.js"></script>
+    <script type="text/javascript" src="js/dtbaker_slider.js"></script>
+    <script type="text/javascript" src="js/dtbaker_animation.js"></script>
+    <script type="text/javascript">
+		<!-- js friendly fallback for animations -->
+		document.write(unescape('%3Cstyle type="text/css"%3E.spacer_animation .spacer_animation_parts div{ margin-top:400px; }%3C/style%3E'));
+		document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_left{ margin-left:0px; }%3C/style%3E'));
+		document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_right{ margin-left:475px;margin-top:-438px; }%3C/style%3E'));
+	    $(function() {
+			$('.spacer_animation').each(function(){
+				var foo = new anim_scroller();
+				foo.init_popup(this);
+				anim_scrollers.push(foo);
+			});
+			// popout leaf code.
+			$('.main_box_background').each(function(){
+				var foo = new anim_scroller();
+				foo.init_popout(this,[
+					{class:'.main_box_bg_left',image:'images/neo/leaves_left.png',animation_from:{marginLeft:0},animation_to:{marginLeft: -121},time:600},
+					{class:'.main_box_bg_right',image:'images/neo/leaves_right.png',animation_from:{marginLeft:475, marginTop:-438},animation_to:{marginLeft: 595,marginTop: -331},time:600}
+					]
+				);
+				anim_scrollers.push(foo);
+			});
+			window.onscroll=dtbaker_anim_scroll_go;
+			dtbaker_anim_scroll_go();
+			
+	        $('.lightbox').lightBox();
+	        $('.dtbaker_gallery a').lightBox();
+	        // this starts the "portfolio" sideways scroller.
+	        // create a new one of these for each sideways scroller you would like to have.
+	        new dtbaker_scroller('rules_slider');
+		});
+    </script>
+</head>
+<body>
+<div id="fixed_header">
+  <div id="header">
+    <div id="logo"><a href="#home_page" class="slide_link">Neo4j Live</a></div>  
+    <div id="menu">
+      <ul id="navigation">
+            <li><a href="#getting_started" class="slide_link">Get Started</a></li>
+            <li><a href="#bootstrap" class="slide_link">Bootstrap</a> </li>
+	        <li><a href="#live" class="slide_link">Live Neo4j</a> </li>
+	        <li><a href="#discuss" class="slide_link">Discuss</a></li>
+      	</ul>
+     </div>
+     <div id="dates">Live on Heroku</div>
+  </div>
+    </div>
+<!--end header-->
+<!-- fixed call to action -->
+<div id="call_to_action">
+	<h1>Live</h1>
+	<p>The Doctor has been captured in a graph.</p>
+	<p>See all the characters, actors, and even some of the props.</p>
+	<p><a href="/webadmin/">Neo4j's Tardis</a></p>
+</div>
+<!-- end call to action -->
+
+<div id="home_page"></div>
+<div id="bg_top">
+      <div id="wrapper">
+    <div class="main_box_wrapper" id="home_pag" style="padding-top:0;">
+          <div class="main_box_background"> <!-- start box background -->
+        <div class="main_box_bg_left"></div>
+        
+        <!--home box-->
+        <div class="main_box" id="section1"> 
+              <div class="home_box">
+            	<div class="text">
+                  <h1><em>Neo4j:</em> the Graph Database</h1>
+                  <h2>You know relational, now consider relationships</h2>
+                  <h2>Have happier data, and even happier users</h2>
+                  <h2>Be social, recommend better, make sense of data</h2>
+                  <p>Try Neo4j right now <a href="http://addons.heroku.com/neo4j">on Heroku</a>. It's easy:</p>
+                  <ul class="numbered_list">
+                <li><span>1</span><a href="#getting_started" class="slide_link">Get Started</a> by learning a bit about Neo4j</li>
+                <li><span>2</span><a href="#bootstrap" class="slide_link">Bootstrap</a> your application from a template</li>
+                <li><span>3</span>Take it for a spin on <a href="#live" class="slide_link">Live Data</a></li>
+              </ul>
+              
+              <ul class="buttons_float">
+				<li>
+				    <div class="button_med"><a href="#getting_started" class="slide_link">learn Neo4j</a></div>
+				</li>
+				<li>
+					<div class="button_med"><a href="#bootstrap" class="slide_link">on Heroku</a></div>
+				</li>
+              </ul>
+              
+<!--                    <div class="star clear"><a href="#prizes" class="slide_link">prizes</a></div>-->
+                </div>
+            <!--end left-->
+            <div class="home_right">
+                  <!-- div class="star">new</div -->
+                  <img src="images/neo/home_image.png" width="433" height="391" alt="product" /></div>
+            <!--end home right--> 
+          </div>
+            </div>
+        <!--end home box-->
+        <div class="main_box_bg_right"></div>
+      </div>
+          <!-- end main box background --> 
+        </div>
+    
+    <!--start under animation-->
+    <div class="spacer_animation" id="spacer_animation_rain">
+          <div class="spacer_animation_bg"></div>
+          <div class="spacer_animation_parts">
+        <div class="spacer_animation_part1"></div>
+        <div class="spacer_animation_part2"></div>
+        <div class="spacer_animation_part3"></div>
+      </div>
+        </div>
+    <!--end under animation--> 
+    
+    <!-- getting :ed box -->
+	<div class="main_box_wrapper" id="getting_started">
+		<div class="main_box_background"> <!-- start box background -->
+			<div class="main_box_bg_left"></div>
+			<div class="main_box">
+				<div class="content">
+					<div class="content_left">
+						<h1>Getting Started</h1>
+						<h3 class="title18">Learn about Neo4j</h3>
+						<p>Neo4j is a graph database. Records are called <em>nodes</em> and the connections between records are first-class citizens called <em>relationships</em>.</p>
+						<p>Neo4j refers to all of this as a <em>Property Graph</em> &mdash; nodes and relationships with key-value <em>properties</em> on both.</p>
+						<p>Querying is performed through a traversal, using the humane <a href="#live" class="slide_link">Cypher</a> query language. 
+						It's like a friendly, pattern-matching version of SQL.</p>
+						<ul>
+							<li>Enjoy an "oh, I get it" moment: read <a href="#relationships" class="slide_link">relational to relationships</a></li>
+							<li>Explore the Neo4j Live: try <a href="#live" class="slide_link">querying NoSQL Now data</a></li>
+						</ul>
+						<h3 class="title18">On Heroku</h3>
+						<ol>
+							<li>Join <a href="http://heroku.com">Heroku</a>, then prepare your <a href="http://devcenter.heroku.com/articles/quickstart">developer environment</a></li>
+							<li>Create a new Heroku app, using the <a href="http://addons.heroku.com/neo4j">Neo4j Add-on</a>:
+							<pre>
+// Create the application
+heroku apps:create {app name}
+// Include the Neo4j Add-on
+heroku addons:add neo4j --app {app name}</pre>
+						</li>
+						<li>Pick a Neo4j REST driver (see the sidebar)</li>
+						<li>Provide the <code>NEO4J_REST_URL</code> environment variable to the driver</li>
+						<li>Get graphy with your application</li>
+						</ol>
+
+					</div>
+					<!--end content left-->
+					<div class="side_right"> 
+						<!--side menu-->
+						<div class="side_menu">
+							<h3>Learning Neo4j</h3>
+							<ul>
+							<li><a href="http://neo4j.org">neo4j.org</a></li>
+							<li><a href="http://docs.neo4j.org">Neo4j Manual</a></li>
+							<li><a href="http://devcenter.heroku.com/articles/neo4j">Neo4j Heroku Add-on</a></li>
+							<li><a href="http://video.neo4j.org">Screencasts</a></li>
+							<li><a href="http://neo4j.meetup.com">Neo4j Meetups</a></li>
+							</ul>
+						</div>
+						<div class="side_menu">
+							<h3>Neo4j Drivers</h3>
+							<ul>
+							<li><a href="http://docs.neo4j.org/chunked/stable/server-java-rest-client-example.html">Java</a></li>
+							<li><a href="http://neo4j.org/spring">Spring Data Neo4j</a></li>
+							<li><a href="https://github.com/maxdemarzi/neography">Ruby</a></li>
+							<li><a href="https://github.com/elado/neoid">Rails</a></li>
+							<li><a href="http://py2neo.org/">Python</a></li>
+							<li><a href="https://github.com/jadell/Neo4jPHP/">PHP</a></li>
+							<li><a href="http://bulbflow.com/">Bulbs (for Python)</a></li>
+							<li><a href="https://github.com/scholrly/neo4django/">Django</a></li>
+							<li><a href="https://github.com/thingdom/node-neo4j/">Node.js</a></li>
+							<li><a href="https://github.com/FaKod/neo4j-scala/">Scala</a></li>
+							<li><a href="http://nuget.org/packages/Neo4jClient/">.net</a></li>
+							<li><a href="https://github.com/davemeehan/Neo4j-GO">Google Go</a></li>
+							</ul>
+							<p class="footnote">* Drivers should support Neo4j 1.6+REST. Did we miss one? Let us know in the <a href="#discuss">comments</a>.</p>
+						</div>
+						<!--end side menu--> 
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="main_box_bg_right"></div>
+		</div>
+	<!-- end main box background --> 
+	</div>
+    
+    <!--start under animation-->
+    <div class="spacer_animation" id="spacer_animation_frog">
+          <div class="spacer_animation_bg"></div>
+          <div class="spacer_animation_parts">
+        <div class="spacer_animation_part1"></div>
+        <div class="spacer_animation_part2"></div>
+        <div class="spacer_animation_part3"></div>
+        <div class="spacer_animation_part4"></div>
+        <div class="spacer_animation_part5"></div>
+      </div>
+        </div>
+    <!-- end getting started -->
+    
+    <div class="spacer_graphic4"></div>
+    <!--Relationships box-->
+    <div class="main_box_wrapper" id="relationships">
+    	<div class="main_box_background"> <!-- start box background -->
+    		<div class="main_box_bg_left"></div>
+    		<!-- change this to be unique, then you can link to it from the main menu-->
+    		<div class="main_box"> 
+    		  <!-- sets the width, minimum height and top margin -->
+    			<div class="content"> 
+    			<!-- start the inner slider left/right bit -->
+    				<div id="rules_slider" class="slider_container">
+    					<div class="slider_header">
+    						<h1>Relational to Relationships</h1>
+    						<ul class="slider_buttons">
+    							<li><a href="#" class="portfolio_prev slider_prev">&laquo;</a></li>
+    							<li><a href="#" class="portfolio_next slider_next">&raquo;</a></li>
+    						</ul>
+    					</div>
+    					<div class="slider_wrapper">
+    						<div class="slider_mover">
+    							<div>
+    								<div class="feature">
+							        	<div class="left_460">
+        								<h2>Ye Olde Join Table</h2>
+    									<h3 class="title18">This you already know</h3>
+    									<p>That the "relational" in RDBMS is simply a foreign key, a fairly humble reference to another record.
+    									Typically the column will be the same as the primary key in the other table, and the constraint will
+    									say something about the connection. To provide more information, use a...
+    									</p>
+    									<h3 class="title14">Join table</h3>
+    									<p>Buried in the schema of every relational database on the planet, one or more join tables lurk. While the
+    									convention adds valuable information about how records relate, queries across multiple joins on large data 
+    									sets can cause join pain.</p>
+    									<h3 class="title14">Now, consider graph relationships.</h3>
+    									</div>
+    									<div class="right_400"><img src="images/join_table.png" width="400" height="364" alt="Join Table" /></div>
+    								
+    								</div>
+    							</div>
+    							<div>
+    								<div class="feature">
+										<div class="left_460">
+										<h2>Graph Relationships</h2>
+										<h3 class="title18">Relationships as first-class citizens</h3>
+										<p>In a graph database like Neo4j, relationships are essential data elements. Down to the bare metal, Neo4j
+										is optimized for managing the relationships between records, resulting in queries that are 1000x faster.</p>
+										<h3 class="title14">How can it be that much faster?</h3>
+										<p>In a graph traversal, only the local data affects the query speed, and because relationships are
+										materialized as actual structures, finding local data is extremely fast. And, it isn't affected by 
+										the growth of the entire data set. What happens to your RDBMS join queries when the data set grows?</p>
+										</div>
+										<div class="right_400"><img src="images/relationships.png" width="400" height="279" alt="Graph Relationships" /></div>
+    								</div>
+    							</div>
+    						<!-- keep adding more divs here if you want more slides --> 
+    						</div>
+    					</div>
+    				<!-- end the inner slider left/right bit -->
+    				<div class="clear"></div>
+    				<!-- forces the design to grow down as you add more content --> 
+    				</div>
+    			<!-- closes content --> 
+    			</div>
+    		</div>
+    		<!-- closes main box -->
+    		<div class="main_box_bg_right"></div>
+    		</div>
+    			<!-- end main box background --> 
+    	</div>
+    <!--end rules box--> 
+    
+    <!--start under animation-->
+    <div class="spacer_animation" id="spacer_animation_rainbow">
+    	<div class="spacer_animation_bg"></div>
+    	<div class="spacer_animation_parts">
+    		<div class="spacer_animation_part1"></div>
+    		<div class="spacer_animation_part2"></div>
+    		<div class="spacer_animation_part3"></div>
+    	</div>
+    </div>
+    <!--end under animation--> 
+    
+    
+    <!--bootstrap box-->
+    <div class="main_box_wrapper" id="bootstrap">
+          <div class="main_box_background"> <!-- start box background -->
+        <div class="main_box_bg_left"></div>
+        <div class="main_box">
+          <div class="content">
+          	<h1>Bootstrap Your App</h1>
+            <div class="left_460">
+				<p><a href="http://gensen.herokuapp.com">Gensen</a> is a repository of Heroku project templates. These fully working example
+				applications include just enough code to demonstrate how to use a particular combination of Language, Framework and Add-ons.
+				</p>
+				<p>
+				After signing in, you can easily browse the available templates, rate them, or elect to share one of your own projects. Many of the templates
+				were contributed as part of the <a href="http://neo4j-challenge.herokuapp.com/">Neo4j Challenge</a> on Heroku. You can read more about
+				the challenge and the winners on the <a href="http://blog.neo4j.org/2012/03/heroku-challengers-vote-now.html">Neo4j Blog about it</a>.
+				</p>
+				<ul class="ticklist">
+					<li>Any language: Ruby, Java, Python, Javascript</li>
+					<li>Popular frameworks: Rails, Spring, Django, Express</li>
+					<li>Every add-on: look for the one spelled N-E-O-4-J</li>
+				</ul>
+				<p>All you need to get started is an account on <a href="http://heroku.com">Heroku</a>.</p>
+            </div>
+            <!--end left-->
+            
+            <div class="right_400"><img src="images/neo/book_cloud.png" width="400" height="430" alt="book" /></div>
+            <div class="clear"></div>
+            <div class="two_column_wrapper">
+              <div class="half_column_left"> 
+				<h2 class="box_title">use a template</h2>
+				<ol class="getting_started">
+					<li>Go to <a href="http://gensen.herokuapp.com">Gensen</a>, logging in to your Heroku account</li>
+					<li>Select your preferred language, framework and other features</li>
+					<li>(optional) Give a rating and leave comments about some templates</li>
+					<li>Click the "clone" button next to the template that catches your eye</li>
+				</ol>
+				<p>Congratulations! A fresh clone of the template project will be created for you, ready to use and easily customized for your own clever purposes.</p>
+              </div>
+              <div class="half_column_right">
+                <h2 class="box_title">share a project </h2>
+                <ol>
+                	<li>Go to <a href="http://gensen.herokuapp.com">Gensen</a>, logging in to your Heroku account</li>
+                	<li>Follow the "Share your Applications" button</li>
+                	<li>Select one of your existing Heroku apps, hit "Share"</li>
+                	<li>Customize the "Share an App" form, then submit</li>
+            	</ol>
+            	<p>Thanks! You will have very generously contributed to saving the planet by reducing the amount of energy wasted when starting a project from scratch.
+            	</p>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!--end two_column_wrapper--> 
+          </div>
+        </div>
+        <div class="main_box_bg_right"></div>
+        <!-- end main box background --> </div>
+        </div>
+    <!--end gensen box--> 
+    
+    <!--start under animation-->
+    <div class="spacer_animation" id="spacer_animation_wind">
+          <div class="spacer_animation_bg"></div>
+          <div class="spacer_animation_parts">
+        <div class="spacer_animation_part1"></div>
+        <div class="spacer_animation_part2"></div>
+        <div class="spacer_animation_part3"></div>
+        <div class="spacer_animation_part4"></div>
+      </div>
+        </div>
+    <!--end under animation--> 
+    
+    
+    <!-- getting started box -->
+	<div class="main_box_wrapper" id="live">
+		<div class="main_box_background"> <!-- start box background -->
+			<div class="main_box_bg_left"></div>
+			<div class="main_box">
+				<div class="content">
+					<h1>Querying Live Data</h1>
+					<div class="content_left">
+						
+						<h3 class="title18">Live on Neo4j</h3>
+						<p>The Wednesday track of NoSQL Now has been captured in a Neo4j Graph, deployed on Heroku.
+						Neo4j's Webadmin is an easy way to get familiar with data and experiment with queries.</p>
+						<p>Check it out <a href="/webadmin/">live right now</a>:*</p>
+						<ul>
+							<li><a href="/webadmin/">Dashboard</a>: an overview of the database, with vital stats and a chart showing change over time</li>
+							<li><a href="/webadmin/#/data/search/1/">Data browser</a>: data inspector and visualizer (use the righmost button in the toolbar to toggle)</li>
+							<li><a href="/webadmin/#/console/">Console</a>: a REPL for running Cypher queries, or testing out REST API calls</li>
+						</ul>
+						<p class="footnote">*<strong>Note</strong> that you may get a phishing warning because we've encoded the password in these URLs.</p>
+					</div>
+					<!--end content left-->
+					<div class="side_right side_box"> 
+						<!--side menu-->
+						<div class="side_menu">
+							<h3>About Cypher</h3>
+							<p>Cypher is a declarative language for graphs queries. Learn more:</p>
+							<ul>
+								<li><a href="http://docs.neo4j.org/chunked/stable/cypher-query-lang.html">Language Details</a></li>
+								<li><a href="http://docs.neo4j.org/chunked/stable/cypher-cookbook.html">Cookbook Examples</a></li>
+								<li><a href="http://docs.neo4j.org/chunked/stable/rest-api-cypher.html">Query over REST</a></li>
+								<li><a href="http://systay.github.com/blog/2011/11/06/cypher---a-view-from-a-recovering-sql-dba/">for SQL DBAs</a>
+							</ul>
+						</div>
+						<!--end side menu--> 
+					</div>
+					<div class="clear"></div>
+					
+					<div>
+					
+						<h3 class="title18">Try these Cypher queries on the live data</h3>
+						<ol>
+							<li>All talks:
+							<pre>
+start n=node(0) match n--m--talks return count(talks);</pre>
+							</li>
+							<li>Graph database track:
+							<pre>start t=node:tags(tag="Graph Databases") match t<-[:tagged]-talk-[:at]->slot return talk order by slot.slot desc;</pre>
+							</li>
+							<li>People from Neo Technology:
+							<pre>
+start c=node:companies(company="Neo Technology") match c<-[:works_at]-p return p;</pre>
+							</li>
+						</ol>
+						<p>&nbsp;</p>
+					</div>
+				</div>
+			</div>
+			<div class="main_box_bg_right"></div>
+		</div>
+	<!-- end main box background --> 
+	</div>    
+    
+        <!--start under animation-->
+        <div class="spacer_animation" id="spacer_animation_bird">
+      <div class="spacer_animation_bg"></div>
+      <div class="spacer_animation_parts">
+            <div class="spacer_animation_part1"></div>
+            <div class="spacer_animation_part2"></div>
+            <div class="spacer_animation_part3"></div>
+          </div>
+    </div>
+        <!--end under animation--> 
+        
+
+    <div class="spacer_graphic6"></div>
+    <!--Discuss box-->
+    <div class="main_box_wrapper" id="discuss">
+          <div class="main_box_background"> <!-- start box background -->
+        <div class="main_box_bg_left"></div>
+        <div class="main_box">
+              <div class="content">
+            <h1>Discuss</h1>
+            <div class="content_left">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'neo4j-cloudstock'; // required: replace example with your forum shortname
+	            //var disqus_developer = 1; 
+	            
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+            </div>
+            <!--end left half-->
+            <div class="side_right">
+                  <h3>Learn more about Neo4j out on the intertubes:</h3>
+                  <ul id="connect">
+              	<li><a href="http://neo4j.org"><img src="images/icon_neo4j.gif" alt="Twitter" width="32" height="32" border="0" /></a> </li>
+                <li><a href="http://twitter.com/#!/neo4j"><img src="images/icon_twitter.gif" alt="Twitter" width="32" height="32" border="0" /></a> </li>
+                <li><a href="http://video.neo4j.org"><img src="images/icon_youtube.gif" alt="You Tube" width="32" height="32" border="0" /></a> </li>
+                <li><a href="http://neo4j.meetup.com"><img src="images/icon_meetup.gif" alt="Linked In" width="32" height="32" border="0" /></a></li>
+              </ul>
+              <h3>Contact us directly:</h3>
+              <p>
+              <a href="mailto:info@neo4j.org">info@neo4j.org</a>
+
+                </div>
+            <div class="clear"></div>
+          </div>
+              <!--end right half--> 
+            </div>
+        <div class="main_box_bg_right"></div>
+      </div>
+          <!-- end main box background --> 
+        </div>
+    <!--end Discuss box-->
+    
+	
+	</div>
+	<!--end wrapper--> 
+	</div>
+<!--bg top--> 
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1192232-24']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

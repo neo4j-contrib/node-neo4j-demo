@@ -1,0 +1,441 @@
+/** 
+  * The header logo.
+  * Change the width and height of this to fit your new logo
+  * Change the path to your logo PNG file if needed
+  */
+#logo a {
+	width:231px;
+	height:87px;
+	text-indent:-9999px;
+	overflow:hidden;
+	display:inline-block;
+	background:url(../images/eco/logo.png) no-repeat;
+}
+body {
+	background-color:#c0e4f2;
+	color:#754b23;
+}
+a, a:link, a:visited {
+	color:#754b23;
+}
+#fixed_header {
+	background-image:url(../images/eco/bar_bg_faded.png);
+}
+ul#navigation a {
+	color:#754b23; /*menu color normal*/
+}
+ul#navigation li.hover a, ul#navigation li:hover a, ul#navigation a.active, ul#navigation a:hover {
+	color:#93ce45; /*color of text on mouse over*/
+}
+ul#navigation a.active {
+	background-color:#fff;
+}
+ul#navigation ul.second-level {
+	background-color:#f3fafc; /*color of the dropdown*/
+}
+ul#navigation ul.second-level a {
+	color:#754b23;
+	border-bottom:1px solid #e5f2f7;
+}
+ul#navigation ul.second-level li.hover a, ul#navigation ul.second-level li:hover a, ul#navigation ul.second-level a:hover {
+	color:#93ce45;
+	background-color:#e5f2f7;
+}
+.main_box {
+	background-color:#FFF;
+}
+.main_box_background {
+	background: url("../images/eco/box_bottom_shadow.png") no-repeat bottom transparent;
+}
+.main_box_background .main_box_bg_left {
+	background-image:url('../images/eco/leaves_left.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	width:308px;
+	height:343px;
+	position:absolute;
+	margin:-2px 0 0 -121px;
+}
+.main_box_background .main_box_bg_right {
+	background-image:url('../images/eco/leaves_right.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	width:495px;
+	height:427px;
+	position:absolute;
+	margin:-331px 0 0 595px;
+}
+.home_box {
+	background:url(../images/eco/home_bg.jpg) no-repeat top left;
+}
+.home_box h1 {
+	color:#93ce45;
+}
+.home_box h2 {
+	color:#754b23;
+}
+.button_med {
+	background:url(../images/eco/button_med.png) no-repeat top left;
+	color:#fff;
+}
+.button_med a, .button_med a:link, .button_med a:visited {
+	color:#fff;
+}
+.numbered_list li {
+	color:#754b23;
+}
+.numbered_list li span {
+	background:url(../images/eco/circle.png) no-repeat 0px 0px;
+	color:#FFF;
+}
+.home_price_tag {
+	background:url(../images/eco/price_tag.png) no-repeat top right;
+	color:#c2e2f4;
+}
+.home_price_tag .band {
+	background-color:#1a87c8;
+	color:#fff;
+}
+.star {
+	background:url(../images/eco/star_orange.png) no-repeat left top;
+	color:#FFF;
+}
+ul.dots li {
+	background:url(../images/eco/icon_circle.png) no-repeat left 6px;
+}
+.slider_buttons a:hover, .slider_buttons a.slider_active {
+	color:#93ce45;
+}
+.slider_buttons a.slider_disabled {
+	color:#FFF;
+}
+.slider_buttons a.slider_disabled:hover {
+	color:#FFF !important;
+}
+.feature img {
+/*border:5px solid #def6ff;*/
+}
+.portfolio_right img {
+	border:5px solid #def6ff;
+}
+.sale_border {
+	border-top:#e3f4f9 2px solid;
+	border-bottom:#e3f4f9 2px solid;
+}
+.sale {
+	border-top:#e3f4f9 1px solid;
+	border-bottom:#e3f4f9 1px solid;
+}
+.sale .balls {
+	background:url(../images/eco/price_circles.png) no-repeat right top;
+}
+.sale .balls .price1 {
+	color:#fff;
+}
+.sale .balls .price2 {
+	color:#754b23;
+}
+.title18 {
+	color:#0079c2;
+}
+.title30 {
+	color:#fe7800;
+}
+.title14 {
+	color:#0079c2;
+}
+.box_title {
+	background:#d9eff6;
+	color:#0079c2;
+}
+.side_box {
+	background:url(../images/eco/side_box_tile.jpg) repeat-y left;
+}
+.side_box .title {
+	color:#5c8e0f;
+}
+.forms {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.textarea {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.form_wrap label {
+}
+.form_wrap .submit_button {
+	background: url("../images/eco/button_med.png") no-repeat top left;
+	color:#fff;
+}
+.button {
+	background-color:#d9eff6;
+	color:#0079c2;
+}
+h1 {
+	color:#93ce45;
+}
+h2 {
+	color:#047bc3;
+}
+h3 {
+	color:#93ce45;
+}
+.blue {
+	color:#047bc3;
+}
+ul.ticklist li {
+	background-image:url(../images/eco/icon_tick.png);
+}
+hr {
+	background-color:#b7e2f1;
+	border:#b7e2f1;
+}
+.dtbaker_gallery img {
+	border: 2px solid #cfcfcf;
+}
+.side_menu h3 {
+	color:#047bc3;
+}
+.side_menu li {
+	background:url(../images/eco/icon_arrow.gif) no-repeat 5px;
+	border-bottom:1px solid #e5e5e5;
+}
+.grey {
+	color:#666666;
+}
+.side_box_thin {
+	background:url(../images/eco/side_box_thin.jpg) top left;
+}
+.search_box_container .field {
+	background-color:#fff !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.search_box_container .sbutton {
+	background:url(../images/eco/button_sml.png) no-repeat bottom left;
+	color:#fff;
+}
+.side_form {
+	background-color:#eefafe;
+}
+.side_form h3 {
+	margin-left:20px;
+}
+#small_form label {
+	color:#0079c2;
+}
+#small_form .submit_button {
+	background:url(../images/eco/button_sml.png) no-repeat bottom left;
+	color:#fff;
+}
+.forms_small {
+	background-color:#ffffff !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+#contact_form .submit_button {
+	background:url(../images/eco/button_sml.png) no-repeat left top;
+	color:#fff;
+}
+ul#connect {
+	border-bottom:solid 1px #d9eff6;
+}
+.googlemap {
+	border:3px solid #d9eff6;
+	color:#666666;
+}
+ul.map_buttons li {
+	background:url(../images/eco/button_med.png) no-repeat top left;
+	color:#fff;
+}
+ul.map_buttons li a {
+	color:#fff;
+}
+.map_input {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+#go_button {
+	background:url(../images/eco/button_med.png) no-repeat left top;
+	color:#fff;
+}
+.side_box .top {
+	background:url(../images/eco/side_box_top.jpg) no-repeat;
+}
+.side_box .bottom {
+	background:url(../images/eco/side_box_bottom.jpg) no-repeat;
+}
+.testimonial_left {
+	background:url(../images/eco/testimonial_top.png) no-repeat;
+}
+.testimonial_right {
+	background:url(../images/eco/testimonial_bottom.png) no-repeat;
+}
+.icon.chome {
+	background:url(../images/eco/icon_home.gif) no-repeat;
+}
+.icon.cmail {
+	background:url(../images/eco/icon_mail.gif) no-repeat;
+}
+.icon.cphone {
+	background:url(../images/eco/icon_phone.gif) no-repeat;
+}
+.icon.cfax {
+	background:url(../images/eco/icon_fax.gif) no-repeat;
+}
+/** Optional Stylesheet for Search Results Page **/
+
+.phpsearch_header {
+	background-color:#F0F7F9;
+	border-top:1px solid #6B90DA;
+}
+.phpsearch_list_item:hover {
+	background-color:#EFEFEF;
+}
+.phpsearch_error {
+	background:#FEF1EC;
+	color:#CD0A0A;
+}
+.phpsearch_input {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.phpsearch_button {
+	background:url(../images/button_sml.png) no-repeat bottom left;
+	color:#fff;
+}
+.cart_summary_wrap {
+	border-top:2px double #D9EFF6;
+	border-bottom:2px double #D9EFF6;
+}
+.cart_summary_wrap label, .cart_summary_wrap span {
+	color:#FE7800 !important;
+}
+/* animation */
+
+.spacer_animation {
+	width:980px;
+	height:400px;
+}
+.spacer_animation .spacer_animation_bg {
+	background:url(../images/eco/under_wave.png) no-repeat bottom;
+	width:980px;
+	height:400px;
+	position:absolute;
+	z-index:10;
+}
+.spacer_animation .spacer_animation_parts {
+	width:980px;
+	height:400px;
+	position:absolute;
+	overflow:hidden;
+}
+.spacer_animation .spacer_animation_parts div {
+	margin-top:0px;
+	width:980px;
+	height:400px;
+	position:absolute;
+	z-index:5;
+}
+/*first animated under graphic HOME*/
+
+
+#spacer_animation_rocks {
+	background:url(../images/eco/under_rocks_bg.png) no-repeat;
+}
+#spacer_animation_rocks .spacer_animation_part1 {
+	background:url(../images/eco/under_rocks_sun.png) no-repeat;
+}
+#spacer_animation_rocks .spacer_animation_part2 {
+	background:url(../images/eco/under_rocks_tree.png) no-repeat;
+}
+#spacer_animation_rocks .spacer_animation_part3 {
+	background:url(../images/eco/under_cloud.png) no-repeat;
+}
+/*second animated under graphic BUY NOW*/
+
+#spacer_animation_wind {
+	background:url(../images/eco/under_wind_bg.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part1 {
+	background:url(../images/eco/under_wind1.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part2 {
+	background:url(../images/eco/under_wind2.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part3 {
+	background:url(../images/eco/under_wind3.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part4 {
+	background:url(../images/eco/under_cloud.png) no-repeat;
+}
+/*Third animated under graphic FEATURES */
+
+#spacer_animation_city {
+}
+#spacer_animation_city .spacer_animation_part2 {
+	background:url(../images/eco/under_city_bg.png) no-repeat;
+}
+#spacer_animation_city .spacer_animation_part1 {
+	background:url(../images/eco/under_city.png) no-repeat;
+}
+#spacer_animation_city .spacer_animation_part3 {
+	background:url(../images/eco/under_cloud.png) no-repeat;
+}
+/*forth animated under graphic GALLERY */
+
+#spacer_animation_rainbow {
+}
+#spacer_animation_rainbow .spacer_animation_part1 {
+	background:url(../images/eco/under_rainbow.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part2 {
+	background:url(../images/eco/under_rainbow_birds.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part3 {
+	background:url(../images/eco/under_rainbow_bg.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part4 {
+	background:url(../images/eco/under_rainbow_tree.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part5 {
+	background:url(../images/eco/under_cloud.png) no-repeat;
+}
+/*fifth animated under graphic REVIEWS */
+
+#spacer_animation_bird {
+	background:url(../images/eco/under_bird_bg.png) no-repeat;
+}
+#spacer_animation_bird .spacer_animation_part1 {
+	background:url(../images/eco/under_bird_bird.png) no-repeat;
+}
+#spacer_animation_bird .spacer_animation_part2 {
+	background:url(../images/eco/under_bird_bee.png) no-repeat;
+}
+/*sixth animated under graphic SUPPORT */
+
+#spacer_animation_frog {
+}
+#spacer_animation_frog .spacer_animation_part1 {
+	background:url(../images/eco/under_frog_bg.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part2 {
+	background:url(../images/eco/under_frog_frog.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part3 {
+	background:url(../images/eco/under_frog_leaves.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part4 {
+	background:url(../images/eco/under_frog_lilly.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part5 {
+	background:url(../images/eco/under_rocks_sun.png) no-repeat;
+}
+/* RAIN animated under graphic contact page*/
+
+
+#spacer_animation_rain {
+	background:url(../images/eco/under_rain_bg.png) no-repeat;
+}
+#spacer_animation_rain .spacer_animation_part1 {
+	background:url(../images/eco/under_rain_leaf.png) no-repeat;
+}
+#spacer_animation_rain .spacer_animation_part2 {
+	background:url(../images/eco/under_rain_flowers.png) no-repeat;
+}
+#spacer_animation_rain .spacer_animation_part3 {
+	background:url(../images/eco/under_rain_butterfly.png) no-repeat;
+}

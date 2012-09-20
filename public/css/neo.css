@@ -1,0 +1,688 @@
+/* @override http://localhost:5000/css/neo.css */
+
+/** Fonts */
+@font-face {
+    font-family: 'Museo';
+    src: url('fonts/Museo300-Regular-webfont.eot');
+    src: url('fonts/Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo300-Regular-webfont.woff') format('woff'),
+         url('fonts/Museo300-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Museo300-Regular-webfont.svg#Museo300') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo';
+    src: url('fonts/Museo500-Regular-webfont.eot');
+    src: url('fonts/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo500-Regular-webfont.woff') format('woff'),
+         url('fonts/Museo500-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Museo500-Regular-webfont.svg#Museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/Museo_Slab_500-webfont.eot');
+    src: url('fonts/Museo_Slab_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo_Slab_500-webfont.woff') format('woff'),
+         url('fonts/Museo_Slab_500-webfont.ttf') format('truetype'),
+         url('fonts/Museo_Slab_500-webfont.svg#MuseoSlab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans_500-webfont.eot');
+    src: url('fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/MuseoSans_500-webfont.woff') format('woff'),
+         url('fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+         url('fonts/MuseoSans_500-webfont.svg#MuseoSans500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#call_to_action {
+	position:fixed;
+	right:0;
+	left: 20px;
+	top: 0;
+	
+	z-index:1001;
+	width: 180px;
+	background: rgba(170,219,233,0.73) repeat-x;
+	padding: 80px 12px 12px;
+}
+#call_to_action h1 {
+	color: #d6222a;
+}
+/** 
+  * The header logo.
+  * Change the width and height of this to fit your new logo
+  * Change the path to your logo PNG file if needed
+  */
+#logo a {
+	width: 300px;
+	height: 87px;
+	text-indent:-9999px;
+	overflow:hidden;
+	display:inline-block;
+	background:url(../images/neo/logo.png) no-repeat;
+}
+#dates {
+	clear: both;
+	margin-left: 86px;
+}
+body {
+	background-color:#80E1FF;
+	color: #5e797f;
+}
+p {
+	font: 300 18px/24px "Lato",sans-serif;
+	text-align: left;
+}
+pre {
+	margin: 4px;
+	border: 1px dashed rgba(170,219,233,0.9);
+	padding: 8px;
+}
+a, a:link, a:visited {
+	color: #5e7980;
+	font-weight: 400;
+	text-decoration: none;
+	opacity: 1;
+}
+
+#fixed_header {
+	background-image:url(../images/neo/bar_bg_faded.png);
+}
+ul#navigation li a {
+	margin: 40px 0px 0px;
+	height: 17px;
+	padding: 15px;
+}
+ul#navigation a {
+	color: #5e797f;
+	font-family: "Museo", Lucida, Verdana, sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+ul#navigation li.hover a, ul#navigation li:hover a, ul#navigation a.active, ul#navigation a:hover, a:hover, .numbered_list li a:hover {
+	color: #d6222a; /*color of text on mouse over*/
+	background-color: #c0e4f2;
+}
+ul#navigation a.active {
+}
+ul#navigation ul.second-level {
+	background-color:#f3fafc; /*color of the dropdown*/
+}
+ul#navigation ul.second-level a {
+	color:#754b23;
+	border-bottom:1px solid #e5f2f7;
+}
+ul#navigation ul.second-level li.hover a, ul#navigation ul.second-level li:hover a, ul#navigation ul.second-level a:hover {
+	color:#93ce45;
+	background-color:#e5f2f7;
+}
+.main_box {
+	background-color:#FFF;
+}
+.main_box_background {
+	background: url("../images/neo/box_bottom_shadow.png") no-repeat bottom transparent;
+}
+.main_box_background .main_box_bg_left {
+	background-image:url('../images/neo/clouds_left.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	width:308px;
+	height:343px;
+	position:absolute;
+	margin:-2px 0 0 -121px;
+}
+.main_box_background .main_box_bg_right {
+	background-image:url('../images/neo/clouds_right.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	width:495px;
+	height:427px;
+	position:absolute;
+	margin:-331px 0 0 595px;
+}
+.home_box {
+	background:url(../images/neo/home_bg.jpg) no-repeat top left;
+}
+.home_box h1 {
+	color: #0d78a8;
+}
+.home_box h2 {
+	color: #5e797f;
+	font-family: "Lato", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 24px;
+}
+h2.do_it {
+	margin-top: 48px;
+	text-align: center;
+}
+.button_med {
+	background:url(../images/neo/button_med_blue.png) no-repeat top left;
+	color:#fff;
+	font-family: "Museo Slab", Lucida, Verdana, sans-serif;
+}
+.button_med a, .button_med a:link, .button_med a:visited {
+	color:#fff;
+}
+.button_med a:hover {
+	color:#93ce45;
+	background: none;
+}
+.numbered_list li {
+	color: #5e797f;
+	font-family: "Lato";
+	font-weight: 300;
+}
+.numbered_list li span {
+	background:url(../images/neo/circle.png) no-repeat 0px 0px;
+	color:#FFF;
+}
+.numbered_list li a {
+	color: #5e797f;
+	font-weight: 400;
+}
+.home_price_tag {
+	background:url(../images/neo/price_tag.png) no-repeat top right;
+	color:#c2e2f4;
+}
+.home_price_tag .band {
+	background-color:#1a87c8;
+	color:#fff;
+}
+.star {
+	background:url(../images/neo/star_orange.png) no-repeat left top;
+	color:#FFF;
+	position:relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 80px;
+}
+ul.dots li, ol.text li {
+	font-size: 16px;
+	line-height: 24px;
+}
+ul.dots li {
+	background:url(../images/neo/icon_circle.png) no-repeat left 6px;
+}
+.slider_buttons a:hover, .slider_buttons a.slider_active {
+	color:#93ce45;
+}
+.slider_buttons a.slider_disabled {
+	color:#FFF;
+}
+.slider_buttons a.slider_disabled:hover {
+	color:#FFF !important;
+}
+.feature img {
+/*border:5px solid #def6ff;*/
+}
+.portfolio_right img {
+	border:5px solid #def6ff;
+}
+.sale_border {
+	border-top:#e3f4f9 2px solid;
+	border-bottom:#e3f4f9 2px solid;
+}
+.sale {
+	border-top:#e3f4f9 1px solid;
+	border-bottom:#e3f4f9 1px solid;
+}
+.sale .balls {
+	background:url(../images/neo/price_circles.png) no-repeat right top;
+}
+.sale .balls .price1 {
+	color:#fff;
+}
+.sale .balls .price2 {
+	color:#754b23;
+}
+.title18 {
+	color:#0079c2;
+	text-align: left;
+}
+.title30 {
+	color:#fe7800;
+	text-align: left;
+}
+.title14 {
+	color:#0079c2;
+	text-align: left;
+}
+h3.title14 {
+	margin-top: 16px;
+	margin-bottom: -2px;
+}
+.box_title {
+	background:#d9eff6;
+	color:#0079c2;
+}
+.side_box {
+	background-color: #dee3e9;
+	padding: 4px;
+}
+.side_box .title {
+	color:#5c8e0f;
+}
+.forms {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.textarea {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.form_wrap label {
+}
+.form_wrap .submit_button {
+	background: url("../images/neo/button_med.png") no-repeat top left;
+	color:#fff;
+}
+.button {
+	background-color:#d9eff6;
+	color:#0079c2;
+}
+h1,h2,h3 {
+	font-family: "Museo",sans-serif;
+	font-style: normal;
+	font-weight: 300;
+}
+h1 {
+	color: #8cc541;
+	line-height: 28px;
+	font-size: 32;
+}
+h1 em {
+	font-style: normal;
+	color: #d6222a;
+}
+h2 {
+	color:#047bc3;
+}
+h3 {
+	color:#93ce45;
+}
+
+ul.text {
+	margin: 4px 0 8px;
+}
+p.text {
+	font-size: 14px;
+	margin-top: 0;
+	line-height: 20px;
+}
+p.footnote {
+	font-size: 12px;
+	line-height: 16px;
+	height: 20px;
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 20px;
+}
+.blue {
+	color:#047bc3;
+}
+ul.ticklist li {
+	background-image:url(../images/neo/icon_tick.png);
+	font-size: 18px;
+}
+hr {
+	background-color:#b7e2f1;
+	border:#b7e2f1;
+}
+.dtbaker_gallery img {
+	border: 2px solid #cfcfcf;
+}
+.side_menu h3 {
+	color:#047bc3;
+}
+.side_menu li {
+	background:url(../images/neo/icon_arrow.gif) no-repeat 5px;
+	border-bottom:1px solid #e5e5e5;
+}
+.grey {
+	color:#666666;
+}
+.side_box_thin {
+	background:url(../images/neo/side_box_thin.jpg) top left;
+}
+.search_box_container .field {
+	background-color:#fff !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.search_box_container .sbutton {
+	background:url(../images/neo/button_sml.png) no-repeat bottom left;
+	color:#fff;
+}
+.side_form {
+	background-color:#eefafe;
+}
+.side_form h3 {
+	margin-left:20px;
+}
+#small_form label {
+	color:#0079c2;
+}
+#small_form .submit_button {
+	background:url(../images/neo/button_sml.png) no-repeat bottom left;
+	color:#fff;
+}
+.forms_small {
+	background-color:#ffffff !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+#contact_form .submit_button {
+	background:url(../images/neo/button_sml.png) no-repeat left top;
+	color:#fff;
+}
+ul#connect {
+	border-bottom:solid 1px #d9eff6;
+}
+.googlemap {
+	border:3px solid #d9eff6;
+	color:#666666;
+}
+ul.map_buttons li {
+	background:url(../images/neo/button_med.png) no-repeat top left;
+	color:#fff;
+}
+ul.map_buttons li a {
+	color:#fff;
+}
+.map_input {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+#go_button {
+	background:url(../images/neo/button_med.png) no-repeat left top;
+	color:#fff;
+}
+.side_box .top {
+	background:url(../images/neo/side_box_top.jpg) no-repeat;
+}
+.side_box .bottom {
+	background:url(../images/neo/side_box_bottom.jpg) no-repeat;
+}
+.testimonial_left {
+	background:url(../images/neo/testimonial_top.png) no-repeat;
+}
+.testimonial_right {
+	background:url(../images/neo/testimonial_bottom.png) no-repeat;
+}
+.icon.chome {
+	background:url(../images/neo/icon_home.gif) no-repeat;
+}
+.icon.cmail {
+	background:url(../images/neo/icon_mail.gif) no-repeat;
+}
+.icon.cphone {
+	background:url(../images/neo/icon_phone.gif) no-repeat;
+}
+.icon.cfax {
+	background:url(../images/neo/icon_fax.gif) no-repeat;
+}
+/** Optional Stylesheet for Search Results Page **/
+
+.phpsearch_header {
+	background-color:#F0F7F9;
+	border-top:1px solid #6B90DA;
+}
+.phpsearch_list_item:hover {
+	background-color:#EFEFEF;
+}
+.phpsearch_error {
+	background:#FEF1EC;
+	color:#CD0A0A;
+}
+.phpsearch_input {
+	background-color:#d9eff6 !important; /*the important gets rid of the yellow google toolbar field style*/
+}
+.phpsearch_button {
+	background:url(../images/button_sml.png) no-repeat bottom left;
+	color:#fff;
+}
+.cart_summary_wrap {
+	border-top:2px double #D9EFF6;
+	border-bottom:2px double #D9EFF6;
+}
+.cart_summary_wrap label, .cart_summary_wrap span {
+	color:#FE7800 !important;
+}
+/* animation */
+
+.spacer_animation {
+	width:980px;
+	height:400px;
+}
+.spacer_animation .spacer_animation_bg {
+	background:url(../images/neo/under_wave.png) no-repeat bottom;
+	width:980px;
+	height:400px;
+	position:absolute;
+	z-index:10;
+}
+.spacer_animation .spacer_animation_parts {
+	width:980px;
+	height:400px;
+	position:absolute;
+	overflow:hidden;
+}
+.spacer_animation .spacer_animation_parts div {
+	margin-top:0px;
+	width:980px;
+	height:400px;
+	position:absolute;
+	z-index:5;
+}
+/*first animated under graphic HOME*/
+
+
+#spacer_animation_rocks {
+	background:url(../images/neo/under_rocks_bg.png) no-repeat;
+}
+#spacer_animation_rocks .spacer_animation_part1 {
+	background:url(../images/neo/under_rocks_sun.png) no-repeat;
+}
+#spacer_animation_rocks .spacer_animation_part2 {
+	background:url(../images/neo/under_rocks_tree.png) no-repeat;
+}
+#spacer_animation_rocks .spacer_animation_part3 {
+	background:url(../images/neo/under_cloud.png) no-repeat;
+}
+/*second animated under graphic BUY NOW*/
+
+#spacer_animation_wind {
+	background:url(../images/neo/under_wind_bg.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part1 {
+	background:url(../images/neo/under_wind1.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part2 {
+	background:url(../images/neo/under_wind2.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part3 {
+	background:url(../images/neo/under_wind3.png) no-repeat;
+}
+#spacer_animation_wind .spacer_animation_part4 {
+	background:url(../images/neo/under_cloud.png) no-repeat;
+}
+/*Third animated under graphic FEATURES */
+
+#spacer_animation_city {
+}
+#spacer_animation_city .spacer_animation_part2 {
+	background:url(../images/neo/under_city_bg.png) no-repeat;
+}
+#spacer_animation_city .spacer_animation_part1 {
+	background:url(../images/neo/under_city.png) no-repeat;
+}
+#spacer_animation_city .spacer_animation_part3 {
+	background:url(../images/neo/under_cloud.png) no-repeat;
+}
+/*forth animated under graphic GALLERY */
+
+#spacer_animation_rainbow {
+}
+#spacer_animation_rainbow .spacer_animation_part1 {
+	background:url(../images/neo/under_rainbow.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part2 {
+	background:url(../images/neo/under_rainbow_birds.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part3 {
+	background:url(../images/neo/under_rainbow_bg.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part4 {
+	background:url(../images/neo/under_rainbow_tree.png) no-repeat;
+}
+#spacer_animation_rainbow .spacer_animation_part5 {
+	background:url(../images/neo/under_cloud.png) no-repeat;
+}
+/*fifth animated under graphic REVIEWS */
+
+#spacer_animation_bird {
+	background:url(../images/neo/under_bird_bg.png) no-repeat;
+}
+#spacer_animation_bird .spacer_animation_part1 {
+	background:url(../images/neo/under_bird_bird.png) no-repeat;
+}
+#spacer_animation_bird .spacer_animation_part2 {
+	background:url(../images/neo/under_bird_bee.png) no-repeat;
+}
+/*sixth animated under graphic SUPPORT */
+
+#spacer_animation_frog {
+}
+#spacer_animation_frog .spacer_animation_part1 {
+	background:url(../images/neo/under_frog_bg.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part2 {
+	background:url(../images/neo/under_frog_frog.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part3 {
+	background:url(../images/neo/under_frog_leaves.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part4 {
+	background:url(../images/neo/under_frog_lilly.png) no-repeat;
+}
+#spacer_animation_frog .spacer_animation_part5 {
+	background:url(../images/neo/under_rocks_sun.png) no-repeat;
+}
+/* RAIN animated under graphic contact page*/
+
+
+#spacer_animation_rain {
+	background:url(../images/neo/under_rain_bg.png) no-repeat;
+}
+#spacer_animation_rain .spacer_animation_part1 {
+	background:url(../images/neo/under_rain_leaf.png) no-repeat;
+}
+#spacer_animation_rain .spacer_animation_part2 {
+	background:url(../images/neo/under_rain_flowers.png) no-repeat;
+}
+#spacer_animation_rain .spacer_animation_part3 {
+	background:url(../images/neo/under_rain_butterfly.png) no-repeat;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+	/* Styles */
+	#call_to_action {
+		display: none;
+		visibility: hidden;
+	}
+}
+
