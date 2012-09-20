@@ -267,6 +267,12 @@ head
                       a(href="http://nodejs.org") Node.js
                     li Optionally, create an account on 
                       a(href='http://heroku.com') Heroku
+                  p
+                    strong Note: 
+                    | Early release API docs now available for Neo4j-Node!
+                  ul.ticklist
+                    li
+                      a(href='https://dl.dropbox.com/u/25149872/node-neo4j/doc/index.html') Node-Neo4j API
                 // end left
                 .right_400
                   img(src='images/neo/book_cloud.png', width='324', height='347', alt='book')
@@ -327,27 +333,30 @@ head
               .content
                 h1 Querying Live Data
                 .content_left
-                  h3.title18 Live on Neo4j
-                  p
-                    | The Wednesday track of NoSQL Now has been captured in a Neo4j Graph, deployed on Heroku.
-                    | Neo4j's Webadmin is an easy way to get familiar with data and experiment with queries.
-                  p
-                    | Check it out
-                    a(href='/webadmin/') live right now
+                  h3.title18 Get Social
+                  p The example application is a simple social network manager. You can add and remove
+                    | users, then indicate who "follows" who to create a Twitter-like graph.
+                  p Try the app:&nbsp;
+                      a(href='/users') View all users
+                  h3.title18 Direct access
+                  p Once you've tried out using the mini-application directly, you can open Neo4j's
+                    | web interface to check out the raw data and run some queries.
+                  p Check it out 
+                    a(href='#{neo4j}/webadmin/') live right now
                     | :*
                   ul
                     li
-                      a(href='/webadmin/') Dashboard
+                      a(href='#{neo4j}/webadmin/') Dashboard
                       | : an overview of the database, with vital stats and a chart showing change over time
                     li
-                      a(href='/webadmin/#/data/search/1/') Data browser
+                      a(href='#{neo4j}/webadmin/#/data/') Data browser
                       | : data inspector and visualizer (use the righmost button in the toolbar to toggle)
                     li
-                      a(href='/webadmin/#/console/') Console
+                      a(href='#{neo4j}/webadmin/#/console/') Console
                       | : a REPL for running Cypher queries, or testing out REST API calls
                   p.footnote
                     | *
-                    strong Note
+                    strong Note 
                     | that you may get a phishing warning because we've encoded the password in these URLs.
                 // end content left
                 .side_right.side_box
@@ -369,18 +378,15 @@ head
                 div
                   h3.title18 Try these Cypher queries on the live data
                   ol
-                    li
-                      | All talks:
+                    li Count all people in the social network:
                       pre.
-                        \nstart n=node(0) match n--m--talks return count(talks);                        
-                    li
-                      | Graph database track:
+                        start n=node(*) return count(n);
+                    li Find the friends of node 1:
                       pre.
-                        \nstart t=node:tags(tag="Graph Databases") match t                        
-                    li
-                      | People from Neo Technology:
+                        start n=node(1) match (n)-[:follows]-(m) return m;                        
+                    li The classic friends-of-a-friend (FoaF) query:
                       pre.
-                        \nstart c=node:companies(company="Neo Technology") match c                        
+                        start me=node(1) match (me)-[:follows]-(friends)-[:follows]-(foaf) return foaf;
                   p  
             .main_box_bg_right
           // end main box background 
